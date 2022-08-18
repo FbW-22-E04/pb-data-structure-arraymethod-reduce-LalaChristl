@@ -8,12 +8,33 @@ let users = [
   {id: 'pete', name: "Pete Peterson", age: 31},
 ];
 
+// function groupById(array) {
+//   //write your code here
+// }
+
+// const groupById = (arr) => {
+//   return arr.reduce((acc, next) => {
+//     let firstName = next.id;
+//     acc[firstName] = next;
+//     return acc;
+
+//   }, {});
+// };
+
 function groupById(array) {
-  //write your code here
+  const newReducedArray = array.reduce((accum, item, i) => {
+    const id = item.id;
+
+ 
+    accum[id] = item;
+    return accum;
+  }, {});
+  console.log(newReducedArray);
 }
 
+
 let usersById= groupById(users)
-console.log(usersById)
+// console.log(groupById(users))
 
 /* expected output: 
 
